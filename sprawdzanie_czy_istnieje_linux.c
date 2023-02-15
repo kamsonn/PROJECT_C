@@ -22,16 +22,20 @@ int main(int arg, char* argv[])
     char *wsk;
     wsk=strchr(losuj_wyraz,*argv[1]);
     int occurances=1;
-    
+    if(wsk==NULL)
+    {
+        printf("\nNo letter %c in %s\n",*argv[i],losuj_wyraz);
+        return 0;
+    }
     while(wsk!=NULL)
     {
-        printf("Letter %c occures %d time with index %d\n",*argv[1],occurances,wsk-losuj_wyraz); // abcdsscda c 
+        printf("Letter %c occures %d time with index %d\n",*argv[1],occurances,wsk-losuj_wyraz);
         wsk++;
         occurances++;
         wsk=strchr(wsk,*argv[1]);
     }
     }
     else
-        printf("Wrong amount of arguments!\n");
+        printf("\nWrong amount of arguments!\n");
     return 0;
 }
