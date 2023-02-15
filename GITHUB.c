@@ -6,7 +6,7 @@
 
 #define ROZMIAR 10
 
-int fib(int n); // prototyp
+int fib(int n); // prototype
 
 int main()
 {
@@ -16,27 +16,27 @@ int main()
     {
         int choice;
         printf("-------------------------------------------------------------------------------------------\n");
-        printf("Wybierz numer programu ktory ma sie wykonac: \n");
-        printf("1. Kasa fiskalna\n");
-        printf("2. Dwa trojkaty(odwrocone) o podanej szerokosci \n");
-        printf("3. Trojkat dla liter\n");
-        printf("4. Tworzenia hasla o n znakach\n");
-        printf("5. Tworzenie tablicy, wypelnianie losowymi [-100,100], odwracanie jej do polowy\n");
-        printf("6. Wczyta 8 znakow (0 or 1) i nastepnie wypisze wartosc dziesietna\n");
-        printf("7. Odwrocenie bitow w liczbie parzystej (operacje bitowe) i wypisanie nowej wartosci\n");
-        printf("8. Program losuje liczby [-3.0,3.0], wypisuje min,max w poszczegolnych 10-tkach (wskazniki)\n");
-        printf("9. Obsluga kolejki LIFO & FIFO\n");
-        printf("10. Obliczanie n-tego wyrazu Fib rekurencyjnie - glebokosc wywolan\n");
-        printf("11. Usuwanie podanego wystapienia w tekscie\n");
-        printf("12. Generacja lanuchu liter i sprawdzanie czy istnije w nim inny (losowy) znak\n");
-        printf("13. Laczenie dwoch posortowanych rosnacych tablic w jedna rosnaca\n");
-        printf("14. Obliczanie n-tego wyrazu ciagu\n");
+        printf("Select the number of the program to run: \n");
+        printf("1. Cash register\n");
+        printf("2. Two triangles (inverted) with a given width\n");
+        printf("3. Triangle for letters\n");
+        printf("4. Create a password with n characters\n");
+        printf("5. Create an array, fill with random [-100,100], flip it half\n");
+        printf("6. It reads 8 characters (0 or 1) and then prints the decimal value\n");
+        printf("7. Invert even bits (bit operations) and print a new value\n");
+        printf("8. The program draws numbers [-3.0,3.0], writes min,max in each 10\n");
+        printf("9. LIFO & FIFO queue service\n");
+        printf("10. Calculation of the n-th word Fib recursively - depth of calls\n");
+        printf("11. Delete the specified instance in text\n");
+        printf("12. Generation of letters and checking if there is another (random) character\n");
+        printf("13. Combine two sorted ascending arrays into one ascending array\n");
+        printf("14. Calculation of the nth word of the string (1+1/4+1/9+...+1/(n^2))\n");
         printf("0. EXIT\n");
         printf("-------------------------------------------------------------------------------------------\n");
         printf("\n");
 
         sleep(1);
-        printf("Twoj wybor ---> ");
+        printf("Your choice ---> ");
         scanf("%d",&choice);
         switch(choice)
         {
@@ -45,7 +45,7 @@ int main()
                 };
             case 1: {
                 int kwota;
-                printf("Podaj kwote do wydania: ");
+                printf("Enter the amount to spend: ");
                 scanf("%d",&kwota);
                 fiskalna(kwota);
                 printf("\n");
@@ -54,7 +54,7 @@ int main()
             break;
             case 2: {
                 int rozmiar;
-                printf("Podaj rozmiar: ");
+                printf("Enter size: ");
                 scanf("%d",&rozmiar);
                 trojkaty(rozmiar);
                 printf("\n");
@@ -64,7 +64,7 @@ int main()
             case 3: {
                 int wartosc=1,temp,zm_1,licznik=0;
                 char litera,znak=64;
-                printf("Podaj DUZA litere na ktorej bedzie konczyl sie trojkat: ");
+                printf("Enter the LARGE letter on which the triangle will end: ");
                 while(wartosc==1)
                 {
                     scanf("%c",&litera);
@@ -73,7 +73,7 @@ int main()
                     else
                     {
                         if(licznik%2==0)
-                        printf("Podaj duza litere!\n");
+                        printf("Enter the LARGE letter!\n");
                         licznik++;
                     }
                 }
@@ -86,7 +86,7 @@ int main()
             break;
             case 4: {
                 int liczba;
-                printf("Ile znakow ma miec twoje haslo: ");
+                printf("How many characters in your password: ");
                 scanf("%d",&liczba);
                 haslo(liczba);
                 sleep(3);
@@ -95,7 +95,7 @@ int main()
             break;
             case 5: {
                 int rozmiar;
-                printf("Podaj rozmiar tablicy: ");
+                printf("Enter the size of an array: ");
                 scanf("%d",&rozmiar);
                 odwrot_polowa(rozmiar);
                 sleep(3);
@@ -110,7 +110,7 @@ int main()
             break;
             case 7: {
                 unsigned int liczba;
-                printf("Podaj liczbe: ");
+                printf("Enter the number: ");
                 scanf("%d",&liczba);
                 bity_odwrocenie(liczba);
                 sleep(3);
@@ -126,16 +126,16 @@ int main()
             case 9: {
                 int tab[ROZMIAR]={0}, main_choice;
                 int b=1,licznik=0;
-                printf("\n*LIFO (1)\n*FIFO (2)\nWybierasz -> ");
+                printf("\n*LIFO (1)\n*FIFO (2)\nChoosing -> ");
                 scanf("%d",&main_choice);
                 if(main_choice==1 || main_choice==2)
                 while(b)
                 {
-                printf("\nWybierz co chcesz robic ze stosem: \n");
-                printf("1. Czytaj stos\n");
-                printf("2. Doloz element do stosu\n");
-                printf("3. Zdejmij element ze stosu\n");
-                printf("0. WYJSCIE\n\n");
+                printf("\nSelect what you wanna do: \n");
+                printf("1. Read stack\n");
+                printf("2. Add an element to the stack\n");
+                printf("3. Remove an element from the stack\n");
+                printf("0. EXIT\n\n");
                 int wybor;
 
                 scanf("%d",&wybor);
@@ -143,7 +143,7 @@ int main()
                     break;
                 while(wybor!=1 && wybor!=2 && wybor!=3)
                 {
-                    printf("ZLY WYBOR!\n");
+                    printf("WRONG CHOICE!\n");
                     scanf("%d",&wybor);
                 }
                 if(wybor==1)
@@ -156,7 +156,7 @@ int main()
                         licznik++;
                     }
                     else
-                        printf("Stos przepelniony!\n");
+                        printf("Stack overflowed!\n");
                 }
                 else if(wybor==3)
                 {
@@ -166,31 +166,31 @@ int main()
                         licznik--;
                     }
                     else
-                        printf("Brak elementu do zdjecia!\n");
+                        printf("There is nothing to remove!\n");
                 }
                 }
                 else
-                    printf("\nZly wybor\n");
+                    printf("\nWrong choice\n");
                 sleep(3);
                 printf("\n");
             }
             break;
             case 10: {
-                printf("Podaj ktory element ciagu Fibbonacciego chcesz otrzymac: ");
+                printf("Enter the element of Fibbonaci you want to get: ");
                 int n, wynik;
                 scanf("%d",&n);
                 wynik=fib(n);
-                printf("\n%d wyraz ciagu Fib(r) wynosi %d\n",n,wynik);
+                printf("\n%d element of Fib is %d\n",n,wynik);
                 sleep(3);
                 printf("\n");
             }
             break;
             case 11: {
                 char tekst[200], lancuch[100],*wsk,*wsk_1;
-                printf("\nPodaj tekst: ");
+                printf("\nEnter the text: ");
                 fgets(tekst,sizeof(tekst),stdin);
 
-                printf("\nPodaj lancuch ktory chcesz w nim usunac: ");
+                printf("\nEnter the string you want to delete: ");
                 scanf("%s",lancuch);
                 wyrzucenie_lancuch(tekst,lancuch);
                 sleep(3);
@@ -199,7 +199,7 @@ int main()
             break;
             case 12: {
                 int n,i=0;
-                printf("\nPodaj dlugosc losowania liczb: ");
+                printf("\nHow long the string should be: ");
                 scanf("%d",&n);
                 char S_1[n+1],S_2[4],literka=rand()%26+97;
                 while(i<n)
@@ -224,9 +224,9 @@ int main()
             break;
             case 13: {
                 int rozmiar_1,rozmiar_2,i=0;
-                printf("Podaj rozmiar 1 tablicy: ");
+                printf("Enter the size of 1 array: ");
                 scanf("%d",&rozmiar_1);
-                printf("Podaj rozmiar 2 tablicy: ");
+                printf("Enter the size of 2 array: ");
                 scanf("%d",&rozmiar_2);
                 int tab1[rozmiar_1],tab2[rozmiar_2];
                 //zerowanie tablic
@@ -243,7 +243,7 @@ int main()
                 }
 
                 i=0;
-                printf("\nWypelnianie 1 tablicy: \n");
+                printf("\nFilling 1 array: \n");
                 while(i<rozmiar_1)
                 {
                     int liczba,a=0,licznik=0;
@@ -259,11 +259,11 @@ int main()
                             i++;
                         }
                     else
-                        printf("Ma byc rosnaco!\n");
+                        printf("It should be ascending!\n");
 
                 }
                 i=0;
-                printf("\nWypelnianie 2 tablicy: \n");
+                printf("\nFilling 2 array: \n");
                 while(i<rozmiar_2)
                 {
                     int liczba,a=0;
@@ -280,7 +280,7 @@ int main()
                             i++;
                         }
                     else
-                        printf("Ma byc rosnaco!\n");
+                        printf("It should be ascending!\n");
 
                 }
                 sort(tab1,tab2,rozmiar_1,rozmiar_2);
@@ -295,7 +295,7 @@ int main()
             }
             break;
             default: {
-                printf("\nBLEDNA OPCJA\n\n");
+                printf("\nWRONG CHOICE\n\n");
                 sleep(1);}
             break;
         }
