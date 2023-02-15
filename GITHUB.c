@@ -308,12 +308,12 @@ void fiskalna(int kwota)
     // mam kwota 503zl to najpierw sprawdzam ile razy sie 200 zmiesci, potem 100, 50, ...
     int i=1;
     int poczatek=500;
-    printf("Wydajemy w banknotach: \n");
+    printf("We issue in banknotes: \n");
     while(kwota>0)
     {
         if(kwota>=poczatek && kwota>10)
         {
-            printf("(%d). Banknot %dzl\n",i,poczatek);
+            printf("(%d). Banknotes %d€\n",i,poczatek);
             kwota-=poczatek;
             i++;
         }
@@ -352,20 +352,20 @@ void fiskalna(int kwota)
                 if(kwota>=5)
                 {
                     poczatek=5;
-                    printf("(%d). Moneta %dzl\n",i,poczatek);
+                    printf("(%d). Coin %d€\n",i,poczatek);
                     kwota-=5;
                 }
                 if(kwota>=2)
                 {
                     poczatek=2;
-                    printf("(%d). Moneta %dzl\n",i,poczatek);
+                    printf("(%d). Coin %d€\n",i,poczatek);
                     kwota-=2;
                     continue;
                 }
                 if(kwota>=1)
                 {
                     poczatek=1;
-                    printf("(%d). Moneta %dzl\n",i,poczatek);
+                    printf("(%d). Coin %d€\n",i,poczatek);
                     kwota-=1;
                     continue;
                 }
@@ -476,13 +476,13 @@ void haslo(int ile)
         }
         i++;
     }
-    printf("Twoje haslo: %s\n\n",haslo);
+    printf("Your password: %s\n\n",haslo);
 }
 void odwrot_polowa(int rozmiar)
 {
     float tab[rozmiar];
     int i=0;
-    printf("\nPrzed zamiana:\n");
+    printf("\nBefore changes:\n");
     while(i<rozmiar)
     {
         tab[i]=rand()/(1.0+RAND_MAX)*200-100;
@@ -490,7 +490,7 @@ void odwrot_polowa(int rozmiar)
         i++;
     }
     int nieparzysta=0;
-    printf("\nPo zamianie:\n");
+    printf("\nAfter changes:\n");
     if(rozmiar%2!=0)
         {
         nieparzysta=1;
@@ -521,7 +521,7 @@ void nabinarny()
 {
     int licznik=0,i=1,suma=0,iloczyn=1;
     char znaki[9]="\0";
-    printf("\nNastepuje wczytywanie kolejnych cyfr liczby binarnej:\n");
+    printf("\nThe consecutive digits of the binary number are loaded:\n");
     while(licznik<=7)
     {
         scanf("%c",&znaki[licznik]);
@@ -550,7 +550,7 @@ void nabinarny()
         zm_1--;
         temp++;
     }
-    printf("Jezeli wprowadzimy ciag : %s, otrzymamy wartosc %d\n",znaki,suma);
+    printf("If we enter: %s, we get %d\n",znaki,suma);
 }
 void bity_odwrocenie(unsigned int liczba)
 {
@@ -571,7 +571,7 @@ void bity_odwrocenie(unsigned int liczba)
         }
         i++;
     }
-    printf("liczba przed odwrotem %d po odwrocie %d\n",liczba,liczba^maska);
+    printf("Number before reversal %d, after %d\n",liczba,liczba^maska);
 }
 void zwraca_wsk()
 {
@@ -605,7 +605,7 @@ void zwraca_wsk()
             n+=1;
         }
         n=1;
-        printf("elementy od %d do %d min = %.4f adres %p, max = %.4f adres %p\n",i*10,i*10+9,min,wsk,max,wsk_1);
+        printf("elementy from %d to %d min = %.4f adres %p, max = %.4f adres %p\n",i*10,i*10+9,min,wsk,max,wsk_1);
         max=min=*tab;
         i++;
     }
@@ -624,7 +624,7 @@ void zwraca_wsk()
             }
         first++;
     }
-    printf("\nNajwiekszy i Najmniejszy w calej tablicy: %.4f oraz %.4f\n",min,max);
+    printf("\nThe smallest and the largest in array-> %.4f , %.4f\n",min,max);
 }
 void czytaj_stos(int *wsk)
 {
@@ -639,7 +639,7 @@ void czytaj_stos(int *wsk)
 }
 void doloz_stos(int *wsk,int n)
 {
-    printf("\nJaki element chcesz dolozyc: ");
+    printf("\nWhich element you want to add: ");
     int element;
     scanf("%d",&element);
     wsk+=n;
@@ -680,12 +680,12 @@ int fib(int n)
     }
     if(n==0 || n==1)
         {
-            printf(", Zwracam f(%d), liczba wywolan -> %d\n",n,l_wywolan);
+            printf(", Returning f(%d), number of calls -> %d\n",n,l_wywolan);
             l_wywolan++;
             glebokosc--;
             return n;
         }
-    printf(", Obliczam f(%d)=f(%d)+f(%d), liczba wywolan -> %d\n",n,n-1,n-2,l_wywolan);
+    printf(", Calculating f(%d)=f(%d)+f(%d), number of calls -> %d\n",n,n-1,n-2,l_wywolan);
     l_wywolan++;
     glebokosc++;
     return fib(n-1)+fib(n-2);
@@ -724,7 +724,7 @@ void wyrzucenie_lancuch(char *tekst,char *lancuch)
         }
     }
     else
-    printf("\nNie ma nic do usunieca -> %s\n",tekst);
+    printf("\nNothing to remove -> %s\n",tekst);
 }
 void spr_nap(char *S_1,char *S_2)
 {
@@ -735,13 +735,13 @@ void spr_nap(char *S_1,char *S_2)
         wsk=S_1;
         while(strstr(wsk,S_2)!=NULL)
         {
-            printf("%d wystapienie, posiada indeks: %d\n",i,strstr(wsk,S_2)-S_1);
+            printf("%d occurance, having index: %d\n",i,strstr(wsk,S_2)-S_1);
             wsk=strstr(wsk,S_2)+3;
             i++;
         }
     }
     else
-    printf("Brak %s w naszym %s",S_2,S_1);
+    printf("There isn`t %s in %s",S_2,S_1);
 }
 void sort(int *tab1,int *tab2,int wart1,int wart2)
 {
@@ -847,7 +847,7 @@ void szereg()
 {
     int licznik=0,i=1,n; // 1/(1^1)+ 1/(2^2) +...+1/(n^2)
     double suma=0.0,wartosc=1.0,potega=pow(10.0,-8.0);
-    printf("\nPodaj ktory wyraz chcesz otrzymac: ");
+    printf("\nWhich word of sequence you want to get: ");
     scanf("%d",&n);
 
     while(wartosc>=potega)
@@ -857,7 +857,7 @@ void szereg()
         wartosc=1/(pow(i,2));
         if(wartosc<potega)
         {
-            printf("Przeszlo za zakres. Dodajemy tylko do pewnej dokladnosci (1e-8): \n");
+            printf("It went beyond the scope. We only add to a certain accuracy (1e-8): \n");
             break;
         }
         i++;
@@ -868,6 +868,6 @@ void szereg()
             break;
     }
 
-    printf("\nLiczba zsumowanych wyrazow: %d, ich suma %.10f\n",licznik,suma);
+    printf("\nNumber of sum`s string words: %d, their sum: %.10f\n",licznik,suma);
 }
 
