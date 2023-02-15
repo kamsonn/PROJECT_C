@@ -1,4 +1,4 @@
-// program sprawdza ilosc wystapienia wpisanej przez nas litery w wylosowanym lanuchu znakow
+// Program checks the number of occurences the entered letter in string
 
 #include<stdio.h>
 #include<string.h>
@@ -16,15 +16,22 @@ int main(int arg, char* argv[])
         losuj_wyraz[i]=rand()%26 + 97;
         i++;
     }
-    printf("Wylosowany lanuch znakow: %s\n",losuj_wyraz);
-    printf("Podana litera: %c\n",*argv[1]);
+    printf("Random character string: %s\n",losuj_wyraz);
+    printf("Entered letter: %c\n",*argv[1]);
 
-    if(strchr(losuj_wyraz,*argv[1])!=NULL)
+    char *wsk;
+    wsk=strchr(losuj_wyraz,*argv[1]);
+    int occurances=1;
+    
+    while(wsk!=NULL)
     {
-        printf("literka %c wystepuje pierwszy raz pod indeksem %d\n",*argv[1],strchr(losuj_wyraz,*argv[1])-losuj_wyraz);
+        printf("Letter %c occures %d time with index %d\n",*argv[1],occurances,wsk-losuj_wyraz); // abcdsscda c 
+        wsk++;
+        occurances++;
+        wsk=strchr(wsk,*argv[1]);
     }
     }
     else
-        printf("Nie wystarczajaca ilosc argumentow!\n");
+        printf("Wrong amount of arguments!\n");
     return 0;
 }
