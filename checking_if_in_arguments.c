@@ -4,6 +4,8 @@
 #include<string.h>
 #include<time.h>
 
+//ciekawe czy to widzisz
+
 int main(int arg, char* argv[])
 {
     if(arg==2)
