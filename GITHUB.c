@@ -49,7 +49,7 @@ int main()
                 scanf("%d",&kwota);
                 fiskalna(kwota);
                 printf("\n");
-                sleep(3);
+                sleep(4);
                     };
             break;
             case 2: {
@@ -58,7 +58,7 @@ int main()
                 scanf("%d",&rozmiar);
                 trojkaty(rozmiar);
                 printf("\n");
-                sleep(3);
+                sleep(4);
             }
             break;
             case 3: {
@@ -89,7 +89,7 @@ int main()
                 printf("How many characters in your password: ");
                 scanf("%d",&liczba);
                 haslo(liczba);
-                sleep(3);
+                sleep(4);
                 printf("\n");
             }
             break;
@@ -98,13 +98,13 @@ int main()
                 printf("Enter the size of an array: ");
                 scanf("%d",&rozmiar);
                 odwrot_polowa(rozmiar);
-                sleep(3);
+                sleep(4);
                 printf("\n");
             }
             break;
             case 6: {
                 nabinarny();
-                sleep(3);
+                sleep(4);
                 printf("\n");
             }
             break;
@@ -113,13 +113,13 @@ int main()
                 printf("Enter the number: ");
                 scanf("%d",&liczba);
                 bity_odwrocenie(liczba);
-                sleep(3);
+                sleep(4);
                 printf("\n");
             }
             break;
             case 8: {
                 zwraca_wsk();
-                sleep(3);
+                sleep(4);
                 printf("\n");
             }
             break;
@@ -171,7 +171,7 @@ int main()
                 }
                 else
                     printf("\nWrong choice\n");
-                sleep(3);
+                sleep(4);
                 printf("\n");
             }
             break;
@@ -181,7 +181,7 @@ int main()
                 scanf("%d",&n);
                 wynik=fib(n);
                 printf("\n%d element of Fib is %d\n",n,wynik);
-                sleep(3);
+                sleep(4);
                 printf("\n");
             }
             break;
@@ -193,7 +193,7 @@ int main()
                 printf("\nEnter the string you want to delete: ");
                 scanf("%s",lancuch);
                 wyrzucenie_lancuch(tekst,lancuch);
-                sleep(3);
+                sleep(4);
                 printf("\n");
             }
             break;
@@ -218,7 +218,7 @@ int main()
                 i=0;
                 spr_nap(S_1,S_2);
 
-                sleep(3);
+                sleep(4);
                 printf("\n");
             }
             break;
@@ -284,19 +284,19 @@ int main()
 
                 }
                 sort(tab1,tab2,rozmiar_1,rozmiar_2);
-                sleep(3);
+                sleep(4);
                 printf("\n");
             }
             break;
             case 14: {
                 szereg();
-                sleep(3);
+                sleep(4);
                 printf("\n");
             }
             break;
             default: {
                 printf("\nWRONG CHOICE\n\n");
-                sleep(1);}
+                sleep(2);}
             break;
         }
         system("cls");
